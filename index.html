@@ -160,8 +160,23 @@ nav.scrolled {
   transition: border-color var(--transition), color var(--transition), background var(--transition);
 }
 .btn-secondary:hover { border-color: var(--champ); color: var(--champ); background: rgba(201,180,154,0.05); }
-.hero-scroll {
-  position: absolute; bottom: 2.5rem; left: 5vw; z-index: 1;
+.hero-tagline {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem;
+  margin: 1.4rem 0 0.4rem;
+}
+.hero-tagline-text {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+  font-weight: 300; color: rgba(232,221,211,0.65);
+  letter-spacing: 0.02em; line-height: 1.1;
+}
+.hero-tagline-accent {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+  font-weight: 800; color: var(--champ);
+  letter-spacing: 0.04em; line-height: 1.1;
+}
+.hero-scroll { position: absolute; bottom: 2.5rem; left: 5vw; z-index: 1;
   display: flex; align-items: center; gap: 0.8rem;
   font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem;
   letter-spacing: 0.25em; text-transform: uppercase; color: rgba(201,180,154,0.4);
@@ -714,6 +729,10 @@ footer {
       <span>Need a solution?</span><br>
       <span class="accent">Think AP.</span>
     </h1>
+    <div class="hero-tagline">
+      <span class="hero-tagline-text" data-fr="Une société," data-en="One company,">Une société,</span>
+      <span class="hero-tagline-accent" data-fr="toutes solutions." data-en="all solutions.">toutes solutions.</span>
+    </div>
     <p class="hero-sub" data-fr="Solutions industrielles sur mesure pour optimiser votre productivité. Bureau d'étude, automatisation, soudage, usinage, contrôle qualité et maintenance." data-en="Tailor-made industrial solutions to optimize your productivity. Engineering, automation, welding, machining, quality control and maintenance.">
       Solutions industrielles sur mesure pour optimiser votre productivité. Bureau d'étude, automatisation, soudage, usinage, contrôle qualité et maintenance.
     </p>
