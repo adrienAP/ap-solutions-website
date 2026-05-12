@@ -516,20 +516,30 @@ footer {
   display: flex; flex-direction: column; gap: 0;
 }
 .chain-item {
-  display: flex; align-items: center; gap: 1.2rem;
+  display: flex; align-items: flex-start; gap: 1.2rem;
   padding: 0.9rem 1.2rem;
   border-left: 2px solid rgba(201,180,154,0.15);
   position: relative; cursor: pointer;
   transition: border-color var(--transition), background var(--transition);
+  flex-direction: column;
 }
+.chain-item-header { display: flex; align-items: center; gap: 1.2rem; width: 100%; }
 .chain-item:hover { border-color: var(--champ); background: rgba(201,180,154,0.05); }
 .chain-item::before {
-  content: ''; position: absolute; left: -5px; top: 50%; transform: translateY(-50%);
+  content: ''; position: absolute; left: -5px; top: 1.2rem;
   width: 8px; height: 8px; border-radius: 50%;
   background: rgba(201,180,154,0.2); border: 1px solid rgba(201,180,154,0.3);
   transition: background var(--transition), border-color var(--transition);
 }
 .chain-item:hover::before { background: var(--champ); border-color: var(--champ); }
+.chain-desc {
+  font-size: 0.82rem; font-weight: 300; color: rgba(201,180,154,0.5);
+  line-height: 1.6; padding-left: calc(24px + 1.2rem);
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease, color 0.3s ease;
+  opacity: 0;
+}
+.chain-item:hover .chain-desc { max-height: 80px; opacity: 1; color: rgba(201,180,154,0.7); }
 .chain-num {
   font-family: 'Orbitron', sans-serif; font-size: 0.65rem; font-weight: 700;
   color: rgba(201,180,154,0.3); min-width: 24px;
@@ -849,39 +859,60 @@ footer {
     </div>
     <div class="unique-chain reveal reveal-delay-2">
       <div class="chain-item" onclick="selectService('bureau')">
-        <span class="chain-num">01</span>
-        <span class="chain-name" data-fr="Bureau d'étude" data-en="Engineering Office">Bureau d'étude</span>
-        <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="chain-item-header">
+          <span class="chain-num">01</span>
+          <span class="chain-name" data-fr="Bureau d'étude" data-en="Engineering Office">Bureau d'étude</span>
+          <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+        <div class="chain-desc" data-fr="Études 3D/2D, rétro-ingénierie, calculs de dimensionnement et conception mécanique adaptés à vos cahiers des charges." data-en="3D/2D studies, reverse engineering, sizing calculations and mechanical design tailored to your specifications.">Études 3D/2D, rétro-ingénierie, calculs de dimensionnement et conception mécanique adaptés à vos cahiers des charges.</div>
       </div>
       <div class="chain-item" onclick="selectService('auto')">
-        <span class="chain-num">02</span>
-        <span class="chain-name" data-fr="Automation" data-en="Automation">Automation</span>
-        <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="chain-item-header">
+          <span class="chain-num">02</span>
+          <span class="chain-name" data-fr="Automation" data-en="Automation">Automation</span>
+          <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+        <div class="chain-desc" data-fr="Conception, programmation et mise en service de systèmes automatisés (API, IHM, supervision) et architectures électriques." data-en="Design, programming and commissioning of automated systems (PLC, HMI, SCADA) and electrical architectures.">Conception, programmation et mise en service de systèmes automatisés (API, IHM, supervision) et architectures électriques.</div>
       </div>
       <div class="chain-item" onclick="selectService('soud')">
-        <span class="chain-num">03</span>
-        <span class="chain-name" data-fr="Soudage" data-en="Welding">Soudage</span>
-        <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="chain-item-header">
+          <span class="chain-num">03</span>
+          <span class="chain-name" data-fr="Soudage" data-en="Welding">Soudage</span>
+          <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+        <div class="chain-desc" data-fr="Ensembles mécano-soudés complexes en MIG/MAG, TIG et électrode enrobée sur acier, inox, aluminium et corten." data-en="Complex welded assemblies using MIG/MAG, TIG and coated electrode on steel, stainless, aluminium and corten.">Ensembles mécano-soudés complexes en MIG/MAG, TIG et électrode enrobée sur acier, inox, aluminium et corten.</div>
       </div>
       <div class="chain-item" onclick="selectService('usin')">
-        <span class="chain-num">04</span>
-        <span class="chain-name" data-fr="Usinage" data-en="Machining">Usinage</span>
-        <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="chain-item-header">
+          <span class="chain-num">04</span>
+          <span class="chain-name" data-fr="Usinage" data-en="Machining">Usinage</span>
+          <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+        <div class="chain-desc" data-fr="Fabrication CNC et conventionnelle en petites et moyennes séries : tournage, fraisage et alésage sur tous métaux." data-en="CNC and conventional manufacturing in small and medium series: turning, milling and boring on all metals.">Fabrication CNC et conventionnelle en petites et moyennes séries : tournage, fraisage et alésage sur tous métaux.</div>
       </div>
       <div class="chain-item" onclick="selectService('laser')">
-        <span class="chain-num">05</span>
-        <span class="chain-name" data-fr="Découpe laser" data-en="Laser cutting">Découpe laser</span>
-        <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="chain-item-header">
+          <span class="chain-num">05</span>
+          <span class="chain-name" data-fr="Découpe laser" data-en="Laser cutting">Découpe laser</span>
+          <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+        <div class="chain-desc" data-fr="Découpe HD haute précision sur acier, inox, aluminium et corten jusqu'à 12 mm. Pièces unitaires ou séries, finitions nettes." data-en="High-precision HD cutting on steel, stainless, aluminium and corten up to 12 mm. One-offs or series, clean finishes.">Découpe HD haute précision sur acier, inox, aluminium et corten jusqu'à 12 mm. Pièces unitaires ou séries, finitions nettes.</div>
       </div>
       <div class="chain-item" onclick="selectService('qual')">
-        <span class="chain-num">06</span>
-        <span class="chain-name" data-fr="Contrôle qualité" data-en="Quality Control">Contrôle qualité</span>
-        <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="chain-item-header">
+          <span class="chain-num">06</span>
+          <span class="chain-name" data-fr="Contrôle qualité" data-en="Quality Control">Contrôle qualité</span>
+          <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+        <div class="chain-desc" data-fr="Contrôle dimensionnel et visuel selon normes ISO, ressuage PT2, métrologie 3D/2D et traçabilité complète avant livraison." data-en="Dimensional and visual inspection per ISO standards, PT2 penetrant testing, 3D/2D metrology and full traceability.">Contrôle dimensionnel et visuel selon normes ISO, ressuage PT2, métrologie 3D/2D et traçabilité complète avant livraison.</div>
       </div>
       <div class="chain-item" onclick="selectService('maint')">
-        <span class="chain-num">07</span>
-        <span class="chain-name" data-fr="Maintenance" data-en="Maintenance">Maintenance</span>
-        <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="chain-item-header">
+          <span class="chain-num">07</span>
+          <span class="chain-name" data-fr="Maintenance" data-en="Maintenance">Maintenance</span>
+          <span class="chain-arrow"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+        <div class="chain-desc" data-fr="Maintenance curative, préventive, prédictive et proactive. Diagnostic, révision et remise en état pour maximiser la disponibilité." data-en="Corrective, preventive, predictive and proactive maintenance. Diagnosis, overhaul and restoration to maximize uptime.">Maintenance curative, préventive, prédictive et proactive. Diagnostic, révision et remise en état pour maximiser la disponibilité.</div>
       </div>
     </div>
   </div>
