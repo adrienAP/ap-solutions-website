@@ -268,10 +268,16 @@ nav.scrolled {
 .services-bg { background: var(--off-white); }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5px;
   background: rgba(201,180,154,0.25);
   border: 1.5px solid rgba(201,180,154,0.25);
+}
+@media (max-width: 1100px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
 }
 .service-card {
   background: var(--white);
