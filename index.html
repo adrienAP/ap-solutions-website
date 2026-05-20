@@ -584,6 +584,23 @@ footer {
   transition: opacity var(--transition), color var(--transition);
 }
 .service-card:hover .service-cta { opacity: 1; color: var(--champ); }
+.service-card-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 1.4rem; padding-top: 1rem;
+  border-top: 1px solid rgba(201,180,154,0.15);
+}
+.service-card-hint {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem;
+  font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--champ-dark); opacity: 0.6;
+  display: flex; align-items: center; gap: 0.5rem;
+  transition: opacity var(--transition), color var(--transition), gap var(--transition);
+}
+.service-card-hint svg { width: 14px; height: 14px; transition: transform var(--transition); }
+.service-card:hover .service-card-hint {
+  opacity: 1; color: var(--champ); gap: 0.8rem;
+}
+.service-card:hover .service-card-hint svg { transform: translateX(4px); }
 
 
 
@@ -1030,7 +1047,7 @@ footer {
       <div class="service-name eth" data-fr="Bureau d'étude" data-en="Engineering Office">Bureau d'étude</div>
       <p class="service-desc" data-fr="Études 3D/2D, rétro-ingénierie, calculs de dimensionnement et conception mécanique/électromécanique adaptés à vos cahiers des charges." data-en="3D/2D engineering, reverse engineering, sizing calculations and mechanical/electromechanical design tailored to your specifications.">Études 3D/2D, rétro-ingénierie, calculs de dimensionnement et conception mécanique/électromécanique adaptés à vos cahiers des charges.</p>
       <div class="service-cta" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</div>
-    </div>
+    <div class="service-card-footer"><div class="service-card-hint" data-fr="Découvrir" data-en="Learn more">Découvrir<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
 
     <div class="service-card reveal reveal-delay-1" onclick="window.location='scan-3d.html'">
       <div class="service-num eth">02</div>
@@ -1040,7 +1057,7 @@ footer {
       <div class="service-name eth" data-fr="Numérisation / Scan 3D" data-en="3D Scanning">Numérisation / Scan 3D</div>
       <p class="service-desc" data-fr="Acquisition 3D haute précision de pièces, sous-ensembles ou installations. Rétro-ingénierie, contrôle dimensionnel, maquette numérique et création de plans à partir de l'existant." data-en="High-precision 3D acquisition of parts, sub-assemblies or installations. Reverse engineering, dimensional inspection, digital mock-up and as-built drawing creation.">Acquisition 3D haute précision de pièces, sous-ensembles ou installations. Rétro-ingénierie, contrôle dimensionnel, maquette numérique et création de plans à partir de l'existant.</p>
       <div class="service-cta" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</div>
-    </div>
+    <div class="service-card-footer"><div class="service-card-hint" data-fr="Découvrir" data-en="Learn more">Découvrir<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
 
     <div class="service-card reveal reveal-delay-2" onclick="window.location='automation.html'">
       <div class="service-num eth">03</div>
@@ -1050,7 +1067,7 @@ footer {
       <div class="service-name eth" data-fr="Automation" data-en="Automation">Automation</div>
       <p class="service-desc" data-fr="Conception, programmation et mise en service de systèmes automatisés (API, IHM, supervision). Intégration d'architectures électriques pour optimiser la productivité." data-en="Design, programming and commissioning of automated systems (PLC, HMI, SCADA). Integration of electrical architectures to optimize productivity and secure your installations.">Conception, programmation et mise en service de systèmes automatisés (API, IHM, supervision). Intégration d'architectures électriques pour optimiser la productivité.</p>
       <div class="service-cta" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</div>
-    </div>
+    <div class="service-card-footer"><div class="service-card-hint" data-fr="Découvrir" data-en="Learn more">Découvrir<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
 
     <div class="service-card reveal reveal-delay-3" onclick="window.location='soudage.html'">
       <div class="service-num eth">04</div>
@@ -1060,7 +1077,7 @@ footer {
       <div class="service-name eth" data-fr="Soudage" data-en="Welding">Soudage</div>
       <p class="service-desc" data-fr="Réalisation d'ensembles mécano-soudés complexes. Maîtrise des procédés MIG/MAG, TIG et électrode enrobée sur acier, inox, aluminium et corten." data-en="Complex welded assemblies and SKID fabrication. Mastery of MIG/MAG, TIG and coated electrode processes on steel, stainless, aluminium and corten.">Réalisation d'ensembles mécano-soudés complexes. Maîtrise des procédés MIG/MAG, TIG et électrode enrobée sur acier, inox, aluminium et corten.</p>
       <div class="service-cta" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</div>
-    </div>
+    <div class="service-card-footer"><div class="service-card-hint" data-fr="Découvrir" data-en="Learn more">Découvrir<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
 
     <div class="service-card reveal reveal-delay-4" onclick="window.location='usinage.html'">
       <div class="service-num eth">05</div>
@@ -1070,7 +1087,7 @@ footer {
       <div class="service-name eth" data-fr="Usinage" data-en="Machining">Usinage</div>
       <p class="service-desc" data-fr="Fabrication de pièces mécaniques en petites et moyennes séries. Usinage CNC et conventionnel : tournage, fraisage et alésage." data-en="Mechanical parts manufacturing in small and medium series. CNC and conventional machining: turning, milling and boring.">Fabrication de pièces mécaniques en petites et moyennes séries. Usinage CNC et conventionnel : tournage, fraisage et alésage.</p>
       <div class="service-cta" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</div>
-    </div>
+    <div class="service-card-footer"><div class="service-card-hint" data-fr="Découvrir" data-en="Learn more">Découvrir<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
 
     <div class="service-card reveal reveal-delay-5" onclick="window.location='decoupe-laser.html'">
       <div class="service-num eth">06</div>
@@ -1080,7 +1097,7 @@ footer {
       <div class="service-name eth" data-fr="Découpe laser" data-en="Laser cutting">Découpe laser</div>
       <p class="service-desc" data-fr="Découpe laser HD haute précision sur acier, inox, aluminium et corten. Tolérances serrées, finitions nettes, pièces unitaires ou séries — acier jusqu'à 12 mm." data-en="High-precision HD laser cutting on steel, stainless, aluminium and corten. Tight tolerances, clean finishes, one-offs or series — steel up to 12 mm thick.">Découpe laser HD haute précision sur acier, inox, aluminium et corten. Tolérances serrées, finitions nettes, pièces unitaires ou séries — acier jusqu'à 12 mm.</p>
       <div class="service-cta" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</div>
-    </div>
+    <div class="service-card-footer"><div class="service-card-hint" data-fr="Découvrir" data-en="Learn more">Découvrir<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
 
     <div class="service-card reveal reveal-delay-6" onclick="window.location='controle-qualite.html'">
       <div class="service-num eth">07</div>
@@ -1090,7 +1107,7 @@ footer {
       <div class="service-name eth" data-fr="Contrôle qualité" data-en="Quality Control">Contrôle qualité</div>
       <p class="service-desc" data-fr="Procédures de contrôle dimensionnel et visuel selon normes ISO. Traçabilité complète, ressuage PT2, métrologie 3D/2D et validation de conformité avant livraison." data-en="Dimensional and visual inspection procedures per ISO standards. Full traceability, PT2 liquid penetrant testing, 3D/2D metrology and compliance validation before delivery.">Procédures de contrôle dimensionnel et visuel selon normes ISO. Traçabilité complète, ressuage PT2, métrologie 3D/2D et validation de conformité avant livraison.</p>
       <div class="service-cta" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</div>
-    </div>
+    <div class="service-card-footer"><div class="service-card-hint" data-fr="Découvrir" data-en="Learn more">Découvrir<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
 
     <div class="service-card reveal reveal-delay-7" onclick="window.location='maintenance.html'">
       <div class="service-num eth">08</div>
@@ -1100,7 +1117,7 @@ footer {
       <div class="service-name eth" data-fr="Maintenance" data-en="Maintenance">Maintenance</div>
       <p class="service-desc" data-fr="Services de maintenance curative, préventive, prédictive et proactive. Diagnostic, révision et remise en état pour assurer la disponibilité de vos équipements." data-en="Corrective, preventive, predictive and proactive maintenance services. Diagnosis, overhaul and restoration to ensure equipment availability and extend service life.">Services de maintenance curative, préventive, prédictive et proactive. Diagnostic, révision et remise en état pour assurer la disponibilité de vos équipements.</p>
       <div class="service-cta" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</div>
-    </div>
+    <div class="service-card-footer"><div class="service-card-hint" data-fr="Découvrir" data-en="Learn more">Découvrir<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
 
   </div>
 </section>
